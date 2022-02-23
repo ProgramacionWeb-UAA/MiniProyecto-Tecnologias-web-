@@ -1,0 +1,139 @@
+body{
+
+
+    background-image: url("../imagenes/wallpaper.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+@font-face {
+    font-family: 'Action-Jackson';
+    src:url('../fonts/webfonts_Action-Jackson/Action-Jackson.ttf.woff') format('woff'),
+        url('../fonts/webfonts_Action-Jackson/Action-Jackson.ttf.svg#Action-Jackson') format('svg'),
+        url('../fonts/webfonts_Action-Jackson/Action-Jackson.ttf.eot'),
+        url('../fonts/webfonts_Action-Jackson/Action-Jackson.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+h1,h2{
+    font-family: 'Action-Jackson';
+    text-align: center;
+    font-size: 40px;
+    background:rgba(103, 245, 190, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 1px;
+
+}
+h2{
+    font-size: 30px;
+    padding: 0;
+    margin: auto;
+    width: 200px;
+ 
+}
+.ingresa-nombre{
+    
+    width: 400px;
+    height: 25px;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    margin: auto;
+    margin-top: 50px;
+}
+section div{
+    width: 600px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    /* display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: auto;
+    margin-top: 50px;
+    background: red; */
+
+}
+.avatar{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.avatar img{
+    width: 100px;
+}
+.contenedor{
+
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedor div{
+    margin-top: 0px;
+
+    width: 600px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: auto;
+    /* margin-top: 50px; */ 
+
+
+}
+img{
+    border-radius: 15px;
+    width: 200px;
+    
+}
+[class^="icon-"]{
+
+    font-size: 40px;
+    
+}
+.icon-arrow-circle-right{
+    color:green;
+}
+.icon-arrow-circle-right:hover{
+    color:red;
+}
+input[type="text"]{
+    border-radius: 15px;
+    font-size: 20px;
+}
+button{
+
+
+    cursor: pointer;
+    padding: 5px;
+    border-radius:15px;
+    line-height: 10px;
+}
+
+button:hover{
+
+    transition:all 2s  ease .8s;
+    transform: scale(1.2) rotateY(360deg);
+
+}
+
+section div input[type="radio"]{
+    width: 100px;
+    height: 25px;
+}
+.crono{
+    width: 150px;
+    border-radius: 15px;
+    margin: auto;
+    background: rgb(219, 219, 219);
+    display: flex;
+    justify-content: center;
+}
+section span{
+    font-size: 25px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura tu nombre</title>
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link href="https://file.myfontastic.com/zmGVYTk8c485ktmePB4HkF/icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+</head>
+<body>
+   
+    <main>
+        <h1>Ingresa tu nombre campeon</h1>
+        <div class="ingresa-nombre">
+            <i class="icon-gamepad"></i>        
+            <input id="captura" type="text" placeholder="Ingresa tu nombre aqui" onkeydown="tecla(event)" >
+            <button id="voz" class="icon-microphone-slash" onclick="reconocimientoVoz()"></button>
+        </div>
+        <div class="ingresa-nombre">
+             
+            <button id="borrar" class="icon-trash" onclick="limpiar()"></button>
+            <i></i>
+            <button class="icon-arrow-circle-right" onclick="guarda()"></button>
+
+        </div>
+        <section>
+            <h1>ELIGE TU AVATAR</h1>
+            <div>
+                <div class="avatar">
+                    <label for="radio1"><img src="./imagenes/avatar1.png" alt=""></label>
+                    <input type="radio" name="grupo" id="radio1" value="avatar1.png" >
+                </div>
+                <div class="avatar">
+                    <label for="radio2"><img src="./imagenes/avatar2.png" alt=""></label>
+                    <input type="radio" name="grupo" id="radio2" value="avatar2.png" >
+                </div>
+                <div class="avatar">
+                    <label for="radio3"><img src="./imagenes/avatar3.png" alt=""></label>
+                    <input type="radio" name="grupo" id="radio3" value="avatar3.png" >
+                </div>
+                <div class="avatar">
+                    <label for="radio4"><img src="./imagenes/avatar4.png" alt=""></label>
+                    <input type="radio" name="grupo" id="radio4" value="avatar4.png">
+                </div>
+                <!-- <button><img src="" alt=""></button>
+                <button><img src="" alt=""></button>
+                <button><img src="" alt=""></button>
+                <button><img src="" alt=""></button> -->
+            </div>
+        </section>
+
+
+
+    </main>
+
+<script src="./js/funciones.js"></script>
+<script src="https://unpkg.com/notie"></script>
+</body>
+</html>
