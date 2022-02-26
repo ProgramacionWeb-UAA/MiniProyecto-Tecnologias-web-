@@ -57,7 +57,8 @@ function dragstart(e){
     e.dataTransfer.setData("text", e.target.id);
     e.dataTransfer.effecAllowed = 'move';
     e.target.style.opacity = '0'; 
-    
+    p=e.target.nextSibling;
+    p.style.opacity='0';
     
     // Define la imagen que se vera al ser arrastrado el elemento y por donde se coje el elemento que se va a mover (el raton aparece en la esquina sup_izq con 0,0)
 	
@@ -65,11 +66,15 @@ function dragstart(e){
 function dragend(e){
     e.target.style.opacity = ''; 
     e.dataTransfer.clearData('Data');
+    p=e.target.nextSibling;
+    p.style.opacity='';
 }
 function drop(e){
     e.preventDefault();
     var data = e.dataTransfer.getData("text");
-    
+    var p = document.createElement('p');
+    p.innerHTML = 'leon';
+    e.target.appendChild(p);
     e.target.appendChild(document.getElementById(data));
     $(data).classList.add("animation");
     e.target.classList.add("brilla");    

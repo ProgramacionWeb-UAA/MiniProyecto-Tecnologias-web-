@@ -17,9 +17,9 @@
 <body>
     <main>
         <header>
-            <h2>TIEMPO</h2>
-            <section class="crono"><span id="hrs">0:</span><span id="min">0:</span><span id="seg">0</span></section>
-            <h2>Game</h2>
+            <h2 class="encabezado">TIEMPO</h2>
+            <section class="crono encabezado"><span id="hrs">0:</span><span id="min">0:</span><span id="seg">0</span></section>
+            <div class="encabezado "><h2 >Game</h2></div>
               
             <nav>
                   <a id="b-1" href="#"><button class="icon-pause" onclick="pausa()"></button></a>
@@ -32,32 +32,26 @@
         </header>
        
         <div class="contenedor">
-            <div >
+            <div class="sub-contenedor">
                 <div class="habitat" id="h-1" ondrop="drop(event)" ondragover="dragover(event)">
-                     <p ondrop="drop(event)" ondragover="dragover(event)"></p>
+                    
                 </div>
                 <div class="habitat" id="h-2" ondrop="drop(event)" ondragover="dragover(event)">
-                     <p></p>
+                    
                 </div>
                 <div class="habitat" id="h-3" ondrop="drop(event)" ondragover="dragover(event)">
-                      <p></p>
+                      
                 </div>
             </div>
-            <div>
-                <div >
-                    <img id="img" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
-    
-                   <p ></p>
+            <div class="sub-contenedor">
+                <div class="contenedor-animalitos">
+                    <img id="img" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="animalito1">Leon</p>
                 </div>
-                <div>
-                    <img id="img2" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
-    
-                    <p></p>
+                <div class="contenedor-animalitos">
+                    <img id="img2" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-2">leon</p>
                 </div>
-                <div>
-                    <img id="img3" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
-    
-                    <p></p>
+                <div class="contenedor-animalitos">
+                    <img id="img3" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-3">leon</p>
                 </div>
             </div>
         </div>

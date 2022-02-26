@@ -142,9 +142,13 @@ section div input[type="radio"]{
 }
 .contenedor div{
     margin-top: 0px;
-    
     width: 800px;
     height: 200px;
+    
+}
+.contenedor .sub-contenedor{
+    margin-top: 0px;
+ 
     display: flex;
     flex-direction: row;
    
@@ -202,12 +206,14 @@ section span{
 }
 .habitat{
     
-    width: 150px;
-    height: 200px;
+    /* width: 150px;
+    height: 200px; */
     border: 10px solid white;
     border-radius: 50%;
     margin-right: 20px;
-    
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 
 }
 .animation{
@@ -234,4 +240,35 @@ section span{
 .brilla{
 
     box-shadow: 0 0 20px antiquewhite, 0 0 40px antiquewhite, 0 0 80px antiquewhite;
+}
+.encabezado{
+    
+    align-self: center;
+    
+}
+h2.encabezado{
+    flex: 0 1 20%;
+    margin-right: 100px;
+}
+div.encabezado{
+
+    flex: 0 1 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+.contenedor-animalitos{
+    display: flex;
+    flex-direction: column;
+    
+}
+p{
+    font-family: 'Action-Jackson';
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+}
+.habitat img{
+    border-radius: 15px;
+    width: 150px;
+    margin: auto;
 }

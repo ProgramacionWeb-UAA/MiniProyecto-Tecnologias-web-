@@ -72,10 +72,19 @@ function limpiar(){
 }
 function guarda(){
     var nombre=document.getElementById("captura").value;
-    var avatar=document.getElementById("radio").value;
+   
+    var avatares=document.querySelectorAll('.radio');
+    var avatar;
+    for(var i=0;i<avatares.length;i++){
+
+        if(avatares[i].checked){
+            avatar=avatares[i];
+        }
+    }
+
     var obj=JSON.stringify({
         nombre:nombre,
-        avatar:avatar
+        avatar:avatar.value
 
 
     });
