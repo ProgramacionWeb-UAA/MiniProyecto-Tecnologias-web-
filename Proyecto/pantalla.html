@@ -6,37 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="stylesheet" href="./estilos/normaliza.css">
+    <link href="https://file.myfontastic.com/zmGVYTk8c485ktmePB4HkF/icons.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="./alertifyjs/css/alertify.min.css" >
+    <link rel="stylesheet" href="./alertifyjs/css/themes/default.min.css">
+    <script src="./alertifyjs/alertify.min.js"></script>
+
 </head>
 <body>
     <main>
-        <h2>TIEMPO</h2>
-        <section class="crono"><span id="hrs">0:</span><span id="min">0:</span><span id="seg">0</span></section>
+        <header>
+            <h2>TIEMPO</h2>
+            <section class="crono"><span id="hrs">0:</span><span id="min">0:</span><span id="seg">0</span></section>
+            <h2>Game</h2>
+              
+            <nav>
+                  <a id="b-1" href="#"><button class="icon-pause" onclick="pausa()"></button></a>
+                  <a id="b-2" href="#"><button class="icon-play-circle" onclick="reinicia()"></button></a>
+                  <a id="b-3" href="#"><button class="icon-sign-out"></button></a>
+                 <a  id="b-4" href="#"><button class="icon-info-circle" onclick="informacion()"></button></a>
+    
+            </nav>
+        
+        </header>
+       
         <div class="contenedor">
-            <div>
-                <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
-                    <p></p>
+            <div >
+                <div class="habitat" id="h-1" ondrop="drop(event)" ondragover="dragover(event)">
+                     <p ondrop="drop(event)" ondragover="dragover(event)"></p>
                 </div>
-                <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
-                    <p></p>
+                <div class="habitat" id="h-2" ondrop="drop(event)" ondragover="dragover(event)">
+                     <p></p>
                 </div>
-                <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
-                    <p></p>
+                <div class="habitat" id="h-3" ondrop="drop(event)" ondragover="dragover(event)">
+                      <p></p>
                 </div>
             </div>
             <div>
+                <div >
+                    <img id="img" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
+    
+                   <p ></p>
+                </div>
                 <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
+                    <img id="img2" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
+    
                     <p></p>
                 </div>
                 <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
-                    <p></p>
-                </div>
-                <div>
-                    <img src="./imagenes/animalitos/prueba leon.png" alt="">
+                    <img id="img3" src="./imagenes/animalitos/prueba leon.png" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)">
+    
                     <p></p>
                 </div>
             </div>
@@ -45,6 +65,7 @@
 
 
     </main>
-    <script src="./js/cronometro.js"></script>
+                    
+    <script src="./js/juego.js"></script>
 </body>
 </html>

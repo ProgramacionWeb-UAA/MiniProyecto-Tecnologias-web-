@@ -1,3 +1,7 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
 body{
 
 
@@ -30,9 +34,18 @@ h1,h2{
 h2{
     font-size: 30px;
     padding: 0;
-    margin: auto;
+    /* margin: auto; */
     width: 200px;
+    height: 30px;
  
+}
+header{
+    background: gainsboro;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    
 }
 .ingresa-nombre{
     
@@ -66,30 +79,12 @@ section div{
 .avatar img{
     width: 100px;
 }
-.contenedor{
-
-    width: 100%;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.contenedor div{
-    margin-top: 0px;
-
-    width: 600px;
-    height: 200px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    margin: auto;
-    /* margin-top: 50px; */ 
 
 
-}
 img{
     border-radius: 15px;
     width: 200px;
-    
+    margin: auto;
 }
 [class^="icon-"]{
 
@@ -126,14 +121,117 @@ section div input[type="radio"]{
     width: 100px;
     height: 25px;
 }
+
+/* <-----------------------------> */
 .crono{
     width: 150px;
     border-radius: 15px;
-    margin: auto;
-    background: rgb(219, 219, 219);
+    /* margin: auto; */
+    /* background: rgb(219, 219, 219); */
     display: flex;
     justify-content: center;
 }
+.contenedor{
+
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.contenedor div{
+    margin-top: 0px;
+    
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+   
+    
+}
+nav{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    
+}
+nav a button{
+    margin-right: 10px;
+    font-size: 30px;
+    color: blueviolet;
+}
+nav a:hover::before {
+    background: aquamarine;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    top:50px;
+    
+    border-radius: 20px;
+    
+    font-size: 20px;
+    font-weight: 600;
+}
+nav #b-1:hover::before {
+    content: 'Pausar juego';
+    right: 100px;
+}
+nav #b-2:hover::before {
+    content: 'Reanudar juego';
+    right: 50px;
+}
+nav #b-3:hover::before {
+    content: 'Salir del juego';
+    right: 25px;
+}
+nav #b-4:hover::before {
+    content: 'Información del juego';
+    right: 10px;
+    height: 60px;
+}
+a{
+    text-decoration: none;
+    display: flex;
+    align-items: stretch;
+}
 section span{
     font-size: 25px;
+}
+.habitat{
+    
+    width: 150px;
+    height: 200px;
+    border: 10px solid white;
+    border-radius: 50%;
+    margin-right: 20px;
+    
+
+}
+.animation{
+
+
+    animation: vibra;
+    animation-duration: 0.12s;
+    animation-iteration-count: 5;
+
+}
+@keyframes vibra{
+
+    0%{
+        transform: rotate(15deg);
+    }
+    /* 50%{
+        transform: rotate(0deg);
+    } */
+    100%{
+        transform: rotate(-15deg);
+    }
+
+}
+.brilla{
+
+    box-shadow: 0 0 20px antiquewhite, 0 0 40px antiquewhite, 0 0 80px antiquewhite;
 }
