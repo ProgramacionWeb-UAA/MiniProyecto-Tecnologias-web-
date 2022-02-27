@@ -5,30 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ganador</title>
-    <link rel="stylesheet" href="estilos/style_win.css">
-    
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="icon" href="imagenes/eco.png">
 </head>
-<body>
+<body id="bodyfel">
     <div id="contenedor">
-        <div class="botones">
-            <button class="btn btn-portada">Portada</button>
-            <button class="btn btn-menu">Menu</button>
-            <button class="btn btn-creditos">Creditos</button>
+        <div class="botones" id="btn">
+            <button class="btn btn-portada" onclick="openPortada()">Portada</button>
+            <button class="btn btn-jugar" onclick="openJugar()">Volver a Jugar</button>
+            <button class="btn btn-creditos" onclick="openCreditos()">Creditos</button>
         </div>
 
         <div id="texto">
             <div id="win">
 
             </div>
-            <div id="frase">
-                <p>Lograste el objetivo y sabíamos que sería así, manten siempre la misma pasión dentro de tu corazón, felicidades hoy y siempre, es nueva experiencia para ti, lleno de aprendizajes y muchas motivaciones.</p>
-            </div>
             <div id="avatar">
 
             </div>
+            <div id="frase">
+                <p>Lograste el objetivo y sabíamos que sería así, manten siempre la misma pasión dentro de tu corazón, felicidades hoy y siempre, es nueva experiencia para ti, lleno de aprendizajes y muchas motivaciones.</p>
+            </div>
         </div>
     </div>
-
     <script src="js/felicitar.js"></script>
 </body>
 </html>

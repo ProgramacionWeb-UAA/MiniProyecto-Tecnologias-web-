@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bokor&family=Chela+One&family=Fruktur&family=Lobster&family=Oi&family=Oleo+Script&family=PT+Sans&family=Pangolin&family=Patrick+Hand&family=Quantico&family=Road+Rage&family=Roboto+Mono:wght@300&family=Rowdies&family=Sedgwick+Ave+Display&family=Supermercado+One&display=swap');
+
+@font-face {
+    font-family: 'Playful';
+    src: url(../fonts/playful_alphabet/PLAYFUL.otf);
+}
+
+@font-face {
+    font-family: 'Ninowriter';
+    src: url(../fonts/ninoshandwriting/Ninoshandwriting.ttf);
+}
+
+@font-face {
+    font-family: 'Nino';
+    src: url(../fonts/nino/Nino.ttf);
+}
+
+#bodyfel{
+    background-image: url('../imagenes/win.jpg');
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+
+#bodypres{
+    background: linear-gradient(to left, rgb(43, 43, 43),rgb(47, 49, 49),rgb(53, 46, 46),rgb(68, 68, 68),rgb(90, 89, 89),rgb(121, 120, 120),rgb(150, 149, 149));
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+div{
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#frase{
+    background: rgba(210, 180, 140, 0.473);
+    padding: 0px 50px;
+    border-radius: 10px;
+}
+
+#frase > p{
+    font-family: 'Road Rage','Ninowriter';
+    font-size: 40px;
+}
+#texto{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+}
+
+#parraf{
+    font-family: 'Playful','Arial';
+    color: rgb(161, 1, 1);
+    font-size: 65px;
+    font-weight: bold;
+}
+
+.btn{
+    width: 250px;
+    height: 45px;
+    font-family: 'Nino','Times New Roman', Times, serif;
+    font-size: 22px;
+    border-radius: 5px;
+    background: rgb(209, 110, 17);
+    box-shadow: inset 3px 3px 5px red;
+    color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background: rgb(39, 151, 39);
+    color: rgb(0, 0, 0);
+    box-shadow: 8px 8px 15px rgb(0, 0, 0);
+}
+img{
+    width: 90px;
+    height: 90px;
+}
+
+canvas{
+    border: 1px solid #af0b0b;
+    margin: 25px 0px;
+    background-image: url('../imagenes/Castillito.jpg');
+    margin: 0;
+    padding: 0;
+    image-rendering: auto;
+    border-radius: 5px;
+    margin-top: 25px;
+}
