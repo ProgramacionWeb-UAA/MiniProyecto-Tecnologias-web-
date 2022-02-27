@@ -4,23 +4,79 @@ var contador_s=0;
 var contador_m=0;
 var contador_h=0;
 var band = false;
-function acomodaElementos(vec){
+
+var misAnimalitos = [
+    {nombre:'Pingüino',imagen:'./imagenes/animalitos/pinguino.png',sonido:'../audios/pinguino.mp3',habitat:'./imagenes/habitats/Polo.jpg'},
+    {nombre:'Pez',imagen:'./imagenes/animalitos/pez.png',sonido:'../audios/pez.mp3',habitat:'./imagenes/habitats/Mar.jpg'},
+    {nombre:'Leon',imagen:'./imagenes/animalitos/leon.png',sonido:'../audios/leon.mp3',habitat:'./imagenes/habitats/Sabana.jpg'},
+    {nombre:'Ornitorrinco',imagen:'./imagenes/animalitos/ornitorringo.png',sonido:'../audios/ornitorrinco.mp3',habitat:'./imagenes/habitats/Rios.jpg'},
+    {nombre:'Conejo',imagen:'./imagenes/animalitos/conejito.png',sonido:'../audios/conejo.mp3',habitat:'./imagenes/habitats/Sabana.jpg'},
+    {nombre:'Suricato',imagen:'./imagenes/animalitos/suricata.png',sonido:'../audios/suricata.mpeg',habitat:'./imagenes/habitats/Sabana.jpg'},
+    {nombre:'Delfin',imagen:'./imagenes/animalitos/delfin.png',sonido:'../audios/delfin.mp3',habitat:'./imagenes/habitats/Mar.jpg'},
+    {nombre:'Oso polar',imagen:'./imagenes/animalitos/oso_polar.png',sonido:'../audios/oso_polar.mp3',habitat:'./imagenes/habitats/Polo.jpg'},
+    {nombre:'Tucan',imagen:'./imagenes/animalitos/tucan.png',sonido:'../audios/tucan.mp3',habitat:'./imagenes/habitats/Selva.jpg'}         
+
+];
+var vecJuego = [];
+// funcion que se encarga de acomodar las habitat y los Animalitos
+// es importante señalar que para identificar y validar los animalitos(img)
+// con sus habitat(div) se añaden clases con un numero que coincide entre 
+// animalitos(img) y su habitat correspondiente
+function acomodaElementos(j){
     var image = new Image();
-    image.src='./imagenes/prueba.jpg';
+    
     var hab1 =  $("h-1");
     var hab2 =  $("h-2");
     var hab3 =  $("h-3");
-    var array = [1,2,3];
-    array=shuffle(array);
-    hab1.style.backgroundImage='url('+"./imagenes/prueba.jpg"+')';
+
+    var ani1 = $('img');
+    var ani2 = $('img2');
+    var ani3 = $('img3');
+
+
+    var array = [j,j+1,j+2];
+    
+    
+    shuffle(array);
+    num = array[0];
+   
+    
+    image.src=vecJuego[num].habitat;
+    
+    hab1.style.backgroundImage='url("'+image.src+'")';
     hab1.style.backgroundRepeat='no-repeat';
     hab1.style.backgroundSize='100% 100%';
-    hab2.style.backgroundImage='url('+"./imagenes/prueba.jpg"+')';
+    hab1.classList.add(''+array[0]);
+    num = array[1];
+    image.src=vecJuego[num].habitat;
+   
+    hab2.style.backgroundImage='url('+image.src+')';
     hab2.style.backgroundRepeat='no-repeat';
     hab2.style.backgroundSize='100% 100%';
-    hab3.style.backgroundImage='url('+"./imagenes/prueba.jpg"+')';
+    hab2.classList.add(''+array[1]+'');
+    num = array[2];
+    image.src=vecJuego[num].habitat;
+    hab3.style.backgroundImage='url('+image.src+')';
     hab3.style.backgroundRepeat='no-repeat';
     hab3.style.backgroundSize='100% 100%';
+    hab3.classList.add(''+array[2]+'');
+    
+    ani1.src = vecJuego[0].imagen;
+    ani1.classList.add(''+j+'');
+    ani1.nextSibling.innerHTML = vecJuego[0].nombre;
+
+    ani2.src = vecJuego[1].imagen;
+    ani2.classList.add(''+(j+1)+'');
+    ani2.nextSibling.innerHTML = vecJuego[1].nombre;
+
+
+    ani3.src = vecJuego[2].imagen;
+    ani3.classList.add(''+(j+2)+'');
+    ani3.nextSibling.innerHTML = vecJuego[2].nombre;
+ 
+   
+
+
     
 }
 
@@ -82,37 +138,29 @@ function drop(e){
 
 }
 function generaRnd(){
-
-    var misAnimalitos = [
-        {nombre:'Pingüino',imagen:'',sonido:'',habitat:''},
-        {nombre:'Pez',imagen:'',sonido:'',habitat:''},
-        {nombre:'Leon',imagen:'',sonido:'',habitat:''},
-        {nombre:'Ornitorrinco',imagen:'',sonido:'',habitat:''},
-        {nombre:'Conejo',imagen:'',sonido:'',habitat:''},
-        {nombre:'Suricato',imagen:'',sonido:'',habitat:''},
-        {nombre:'Tiburon',imagen:'',sonido:'',habitat:''},
-        {nombre:'Oso polar',imagen:'',sonido:'',habitat:''},
-        {nombre:'Tucan',imagen:'',sonido:'',habitat:''}         
     
-    ];
     
-    var vecJuego = [ ];
+    
     var i=0;
     do{
-        var obj = misAnimalitos[Math.floor(Math.random*10)];
+        let obj = misAnimalitos[Math.floor(Math.random() * 9)];
         if(!(vecJuego.includes(obj))){
             vecJuego.push(obj);
             i++;
+            
         }else{
 
         }
-
-
+        
+       
     }while(i<6);
+   
+    
+     acomodaElementos(0);
 
-
-
+    
 }
+
 function informacion(){
     var band2;
     var ins="Arrastra a los animalitos hacia las habitat que le corresponden.";
@@ -145,10 +193,9 @@ function informacion(){
 
 }
 function inicia(){
-    
+    generaRnd();
     activa();
-      acomodaElementos("hi");
-
+    
 }
 
 function $(elemento){
