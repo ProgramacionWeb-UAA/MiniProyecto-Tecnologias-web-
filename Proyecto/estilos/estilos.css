@@ -45,7 +45,7 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
-    
+    margin-bottom: 20px;
 }
 .ingresa-nombre{
     
@@ -82,7 +82,8 @@ section div{
 
 
 img{
-    border-radius: 15px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
     width: 200px;
     margin: auto;
 }
@@ -140,19 +141,28 @@ section div input[type="radio"]{
     justify-content: space-between;
     align-items: center;
 }
-.contenedor div{
+/* .contenedor div{
     margin-top: 0px;
     width: 800px;
     height: 200px;
     
-}
+} */
 .contenedor .sub-contenedor{
     margin-top: 0px;
- 
+    width: 80%;
+    height: 200px;
     display: flex;
     flex-direction: row;
-   
+    justify-content: flex-start;
     
+}
+.contenedor .sub-contenedor div{
+    width: 70%;
+    height: 100%;
+    
+}
+.contenedor .sub-contenedor div p{
+    text-align: start;
 }
 nav{
     flex-basis: 100%;
@@ -212,8 +222,7 @@ section span{
     border-radius: 50%;
     margin-right: 20px;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    justify-content: center;
 
 }
 .animation{
@@ -257,9 +266,10 @@ div.encabezado{
     justify-content: flex-end;
 }
 .contenedor-animalitos{
+    flex-basis: 33%;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
 p{
     font-family: 'Action-Jackson';

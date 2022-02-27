@@ -1,9 +1,11 @@
 var pantalla = 1;
-var intervalo;
+var intervalo;//para cuestiones del tiempo
 var contador_s=0;
 var contador_m=0;
 var contador_h=0;
 var band = false;
+var k=0;//indice que controla el vector que maneja los objetos que se presentaran en pantalla, es decir los animalitos
+//en la seccion de drop para asi poder extraer toda la informacion del objeto que se selecciona al arrastrar y soltar
 
 var misAnimalitos = [
     {nombre:'Pingüino',imagen:'./imagenes/animalitos/pinguino.png',sonido:'../audios/pinguino.mp3',habitat:'./imagenes/habitats/Polo.jpg'},
@@ -43,13 +45,14 @@ function acomodaElementos(j){
     
     image.src=vecJuego[num].habitat;
     
-    hab1.style.backgroundImage='url("'+image.src+'")';
+    hab1.style.backgroundImage='url('+image.src+')';
     hab1.style.backgroundRepeat='no-repeat';
     hab1.style.backgroundSize='100% 100%';
     hab1.classList.add(''+array[0]);
     num = array[1];
     image.src=vecJuego[num].habitat;
-   
+    
+
     hab2.style.backgroundImage='url('+image.src+')';
     hab2.style.backgroundRepeat='no-repeat';
     hab2.style.backgroundSize='100% 100%';
@@ -75,7 +78,6 @@ function acomodaElementos(j){
     ani3.nextSibling.innerHTML = vecJuego[2].nombre;
  
    
-
 
     
 }
@@ -111,10 +113,10 @@ function dragover(e){
 }
 function dragstart(e){
     e.dataTransfer.setData("text", e.target.id);
-    e.dataTransfer.effecAllowed = 'move';
     e.target.style.opacity = '0'; 
     p=e.target.nextSibling;
     p.style.opacity='0';
+    var img = new Image();
     
     // Define la imagen que se vera al ser arrastrado el elemento y por donde se coje el elemento que se va a mover (el raton aparece en la esquina sup_izq con 0,0)
 	
@@ -128,13 +130,12 @@ function dragend(e){
 function drop(e){
     e.preventDefault();
     var data = e.dataTransfer.getData("text");
-    var p = document.createElement('p');
-    p.innerHTML = 'leon';
-    e.target.appendChild(p);
+   
+    $(data).style.background = 'transparent';
     e.target.appendChild(document.getElementById(data));
     $(data).classList.add("animation");
     e.target.classList.add("brilla");    
-
+    
 
 }
 function generaRnd(){
