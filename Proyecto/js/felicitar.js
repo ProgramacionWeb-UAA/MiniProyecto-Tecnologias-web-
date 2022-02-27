@@ -6,8 +6,7 @@ var objeto=localStorage.getItem("user");
 var nombre,avatar;
 const sonido = document.createElement("audio");
 document.body.addEventListener('click', sonarWin);
-/*var nom="Juan";
-var ava="avatar.jpg";*/
+
 
 function presentar(){
     felicitar.setAttribute('id','parraf');
@@ -55,7 +54,7 @@ function openPortada(){
 
 }
 
-function openMenu(){
+function openJugar(){
 
 }
 
