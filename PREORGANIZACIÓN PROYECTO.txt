@@ -1,0 +1,39 @@
+LUIS
+Leon
+Pinguino
+
+CRIS 
+Conejito salvaje
+Zuricata
+
+ELI 
+Ornitorrinco
+Pez
+
+JUCA
+Tiburon 
+Oso polar 
+
+EXTRA
+TUCAN
+
+HABITATS
+SABANA: LEON, ZURICATA, CONEJITO SALVAJE
+MAR: PEZ, TIBURON
+POLOS: OSO POLAR, PINGUINO 
+SELVA: TUCAN
+RIOS Y LAGOS: ORNITORRINCO
+
+Diseño de animales: Luis 
+Habitats: Luis 
+Sonidos de animales: Luis
+Logotipo: Luis
+Presentación: Juca (Luis pasará el logotipo)
+Meter audios: Juca 
+Aleatorios de animales y habitats: Juca 
+Creditos: Eli 
+LocalStorage (Se guardará el nombre y el tiempo en el cual el jugador resolvió el juego): Cris
+Pantalla donde se piden los datos: Cris  
+Pantalla de felicitaciones: Juca 
+Video: Luis
+Formato de HTML del juego: Cris
