@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación</title>
+    <title>Instrucciones Del Juego</title>
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="js/presentacion.js"></script>
     <link rel="icon" href="imagenes/eco.png">
-</head>
-<body id="bodypres">
-    
-    <div class="contenedor">
-        <div class="caja-canvas" width="900px" height="570px">
-            <canvas id="lienzo" width="900px" height="570px"></canvas>
-        </div>
 
+</head>
+<body>
+    <div class="instrucciones">
+        <div class="video">
+            <iframe width="900px" height="550px" src="https://www.youtube.com/embed/qNz4d_3I7eY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="botones" id="btn">
             <button class="btn btn-portada" onclick="openGame()">Jugar</button>
             <button class="btn btn-menu" onclick="openInstrucciones()">Instrucciones</button>
             <button class="btn btn-creditos" onclick="openCreditos()">Creditos</button>
         </div>
     </div>
-
 </body>
 </html>
