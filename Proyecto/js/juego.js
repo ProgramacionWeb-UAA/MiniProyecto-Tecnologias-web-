@@ -112,12 +112,21 @@ function dragover(e){
     e.preventDefault();
 }
 function dragstart(e){
+
+    // var img = document.createElement('img');
+    // img.src = './imagenes/animalitos/linux.gif';
+    // img.width = '50px';
+    // x = e.layerX;
+	// y = e.layerY;
+    
+    
+    // e.dataTransfer.setDragImage($(e.target.id),x,y);
+
     e.dataTransfer.setData("text", e.target.id);
     e.target.style.opacity = '0'; 
     p=e.target.nextSibling;
     p.style.opacity='0';
-    var img = new Image();
-    
+   
     // Define la imagen que se vera al ser arrastrado el elemento y por donde se coje el elemento que se va a mover (el raton aparece en la esquina sup_izq con 0,0)
 	
 }
@@ -135,7 +144,15 @@ function drop(e){
     e.target.appendChild(document.getElementById(data));
     $(data).classList.add("animation");
     e.target.classList.add("brilla");    
-    
+    pos=0;
+    if($(data).id=='img'){
+
+    }else if($(data).id=='img2'){
+        pos=1;
+    }else{
+        pos=2;
+    }
+    e.target.nextSibling.innerHTML = vecJuego[pos].nombre;
 
 }
 function generaRnd(){
