@@ -32,11 +32,40 @@ function acomodaElementos(j){
     var hab2 =  $("h-2");
     var hab3 =  $("h-3");
 
-    var ani1 = $('img');
-    var ani2 = $('img2');
-    var ani3 = $('img3');
-
-
+    var p1 = document.createElement('p'); 
+    p1.setAttribute('id','ani-1');
+    var p2 = document.createElement('p');
+    p2.setAttribute('id','ani-2');
+    
+    var p3 = document.createElement('p');
+    p3.setAttribute('id','ani-3');
+    
+    var cont1 = $('cont-1');
+    var cont2 = $('cont-2');
+    var cont3 = $('cont-3');
+    var ani1 = document.createElement('img');
+    ani1.setAttribute('ondragstart','dragstart(event)');
+    ani1.setAttribute('ondragend','dragend(event)');
+    ani1.setAttribute('id','img');
+    
+    var ani2 = document.createElement('img');
+    ani2.setAttribute('ondragstart','dragstart(event)');
+    ani2.setAttribute('ondragend','dragend(event)'); 
+    ani2.setAttribute('id','img2');
+    
+    var ani3 = document.createElement('img');
+    ani3.setAttribute('id','img3');
+    ani3.setAttribute('ondragstart','dragstart(event)');
+    ani3.setAttribute('ondragend','dragend(event)');
+    cont1.appendChild(ani1);
+    cont1.appendChild(p1);
+    
+    cont2.appendChild(ani2);
+    cont2.appendChild(p2);
+    
+    cont3.appendChild(ani3);
+    cont3.appendChild(p3);
+    
     var array = [j,j+1,j+2];
     
     
@@ -70,19 +99,19 @@ function acomodaElementos(j){
     
     ani1.src = vecJuego[j].imagen;
     ani1.classList.add(''+j+'');
-    ani1.nextSibling.innerHTML = vecJuego[j].nombre;
+    p1.innerHTML = vecJuego[j].nombre;
     ani1.setAttribute("name",vecJuego[j].nameHab);
     ani1.setAttribute("ruido",vecJuego[j].sonido);
 
-    ani2.src = vecJuego[1].imagen;
+    ani2.src = vecJuego[j+1].imagen;
     ani2.classList.add(''+(j+1)+'');
-    ani2.nextSibling.innerHTML = vecJuego[j+1].nombre;
+    p2.innerHTML = vecJuego[j+1].nombre;
     ani2.setAttribute("name",vecJuego[j+1].nameHab);
     ani2.setAttribute("ruido",vecJuego[j+1].sonido);
 
-    ani3.src = vecJuego[2].imagen;
+    ani3.src = vecJuego[j+2].imagen;
     ani3.classList.add(''+(j+2)+'');
-    ani3.nextSibling.innerHTML = vecJuego[j+2].nombre;
+    p3.innerHTML = vecJuego[j+2].nombre;
     ani3.setAttribute("name",vecJuego[j+2].nameHab);
     ani3.setAttribute("ruido",vecJuego[j+2].sonido);
    
@@ -139,10 +168,13 @@ function dragstart(e){
 	
 }
 function dragend(e){
+    
     e.target.style.opacity = ''; 
-    e.dataTransfer.clearData('Data');
     p=e.target.nextSibling;
-    p.style.opacity='';
+    if(p!=null)
+    p.style.opacity = '';
+    e.dataTransfer.clearData('Data');
+   
 }
 function drop(e){
     e.preventDefault();
@@ -150,12 +182,12 @@ function drop(e){
     
     
    
-    pos=0;
+    pos=k;
     if($(data).id=='img'){
     }else if($(data).id=='img2'){
-        pos=1;
+        pos=k+1;
     }else{
-        pos=2;
+        pos=k+2;
     }
 
     var animal=$(data).getAttribute("name");
@@ -168,13 +200,67 @@ function drop(e){
         e.target.appendChild(document.getElementById(data));
         $(data).classList.add("animation");
         e.target.classList.add("brilla");
+        e.target.setAttribute('ondrop','return false');
         $(data).setAttribute("draggable",'false')       
         let cancion = sonidos($(data).getAttribute("ruido"));
         let boton=document.createElement("button");
         boton.click();
         cancion.play();
         e.target.nextSibling.innerHTML = vecJuego[pos].nombre;
+        if(pantalla==3){
+            // $('img').classList.remove("animation");
+            // $('img2').classList.remove("animation");
+            // $('img3').classList.remove("animation");
+            // $('img').setAttribute("draggable",'true');  
+            // $('img2').setAttribute("draggable",'true');    
+            // $('img3').setAttribute("draggable",'true');  
+           
+          
+            setTimeout(()=>{
+                
+                $('h-1').setAttribute('ondrop','drop(event)');
+                $('h-2').setAttribute('ondrop','drop(event)');
+                $('h-3').setAttribute('ondrop','drop(event)');
+                
+                $('h-1').classList.remove("brilla");
+                $('h-2').classList.remove("brilla");
+                $('h-3').classList.remove("brilla");
+    
+                $('h-1').nextSibling.innerHTML = '';
+                $('h-2').nextSibling.innerHTML = '';
+                $('h-3').nextSibling.innerHTML = '';
+                
+                $('img').parentNode.removeChild($('img'));
+                $('img2').parentNode.removeChild($('img2'));
+                $('img3').parentNode.removeChild($('img3'));
+    
+    
+                $('cont-1').removeChild($('ani-1'));
+                $('cont-2').removeChild($('ani-2'));
+                $('cont-3').removeChild($('ani-3'));
+                
+                k=3;
+                
+                
+                acomodaElementos(3);
+            },2000);
+            
+        }else if(pantalla>=6){
+           
+            pausa();
+
+            $('titulo').innerHTML = 'terminado';
+            setTimeout(() => {
+                window.open('./felicitaciones.html');
+                window.close(); 
+            }, 2000);
+            
+        }else{
+
+        }
+        pantalla++;
     }else{
+        
         let cancion = sonidos("audios/error.mp3");
         let boton=document.createElement("button");
         boton.click();
@@ -257,6 +343,7 @@ function $(elemento){
 }
 function pausa(){
     if(band==false){
+        $('titulo').innerHTML = 'EN PAUSA';
         clearInterval(intervalo);
         $('img').setAttribute('draggable','false');
         $('img2').setAttribute('draggable','false');
@@ -272,6 +359,8 @@ function reinicia(){
     var seg=document.getElementById("seg");
     
     if(band){
+        $('titulo').innerHTML = 'GAME';
+        
         $('img').setAttribute('draggable','true');
         $('img2').setAttribute('draggable','true');
         $('img3').setAttribute('draggable','true');

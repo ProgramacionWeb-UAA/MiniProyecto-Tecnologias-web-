@@ -72,7 +72,7 @@ function limpiar(){
 }
 function guarda(){
     var nombre=document.getElementById("captura").value;
-   
+    
     var avatares=document.querySelectorAll('.radio');
     var avatar;
     for(var i=0;i<avatares.length;i++){
@@ -81,7 +81,15 @@ function guarda(){
             avatar=avatares[i];
         }
     }
-
+    if(avatar==null || nombre==''){
+        var alert = alertify.alert("ATENCION",'Ingresa tu nombre y tu avatar para poder continuar...',function(){
+        
+           
+        }).set('label', 'Aceptar');     	 
+        alert.set({transition:'flipx'}); //slide, zoom, flipx, flipy, fade, pulse (default)
+        alert.set('modal', false);  //al pulsar fuera del dialog se cierra o no
+        return;
+    }
     var obj=JSON.stringify({
         nombre:nombre,
         avatar:avatar.value
@@ -89,6 +97,7 @@ function guarda(){
 
     });
     localStorage.setItem("user",obj);
+    window.open('./pantalla.html')
 }
 
 function tecla(ev){

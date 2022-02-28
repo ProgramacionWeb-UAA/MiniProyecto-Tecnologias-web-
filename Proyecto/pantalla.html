@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="./estilos/estilos.css">
     <link rel="stylesheet" href="./estilos/normaliza.css">
     <link href="https://file.myfontastic.com/zmGVYTk8c485ktmePB4HkF/icons.css" rel="stylesheet">
@@ -13,19 +14,20 @@
     <link rel="stylesheet" href="./alertifyjs/css/themes/default.min.css">
     <script src="./alertifyjs/alertify.min.js"></script>
     <link rel="icon" type="image/png" href="./imagenes/favicon.png"/>
+   
 </head>
 <body>
     <main>
         <header>
             <h2 class="encabezado">TIEMPO</h2>
             <section class="crono encabezado"><span id="hrs">0:</span><span id="min">0:</span><span id="seg">0</span></section>
-            <div class="encabezado "><h2 >Game</h2></div>
+            <div class="encabezado "><h2 id="titulo">Game</h2></div>
               
             <nav>
-                  <a id="b-1" href="#"><button class="icon-pause" onclick="pausa()"></button></a>
-                  <a id="b-2" href="#"><button class="icon-play-circle" onclick="reinicia()"></button></a>
-                  <a id="b-3" href="index.html"><button class="icon-sign-out"></button></a>
-                 <a  id="b-4" href="#"><button class="icon-info-circle" onclick="informacion()"></button></a>
+                  <a id="b-1" href="#"><button class="icon-pause btn" onclick="pausa()"></button></a>
+                  <a id="b-2" href="#"><button class="icon-play-circle btn " onclick="reinicia()"></button></a>
+                  <a id="b-3" href="index.html"><button class="icon-sign-out btn"></button></a>
+                 <a  id="b-4" href="#"><button class="icon-info-circle btn"  onclick="informacion()"></button></a>
     
             </nav>
         
@@ -50,14 +52,14 @@
             </div>
             </div>
             <div class="sub-contenedor">
-                <div class="contenedor-animalitos">
-                    <img id="img" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="animalito1"></p>
+                <div class="contenedor-animalitos" id="cont-1">
+                    <!-- <img id="img" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-1"></p> -->
                 </div>
-                <div class="contenedor-animalitos">
-                    <img id="img2" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-2"></p>
+                <div class="contenedor-animalitos" id="cont-2">
+                    <!-- <img id="img2" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-2"></p> -->
                 </div>
-                <div class="contenedor-animalitos">
-                    <img id="img3" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-3"></p>
+                <div class="contenedor-animalitos" id="cont-3">
+                    <!-- <img id="img3" src="" alt="" draggable="true" ondragstart="dragstart(event)" ondragend="dragend(event)"><p id="nom-ani-3"></p> -->
                 </div>
             </div>
         </div>

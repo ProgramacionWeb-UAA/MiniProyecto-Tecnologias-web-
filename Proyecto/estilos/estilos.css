@@ -154,11 +154,11 @@ section div input[type="radio"]{
     height: 200px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     
 }
 .contenedor .sub-contenedor div{
-    width: 70%;
+    width: 250px;
     height: 100%;
     
 }
@@ -272,7 +272,7 @@ div.encabezado{
     justify-content: flex-end;
 }
 .contenedor-animalitos{
-    flex-basis: 33%;
+    /* flex-basis: 33%; */
     display: flex;
     flex-direction: column;
     align-items: center;
