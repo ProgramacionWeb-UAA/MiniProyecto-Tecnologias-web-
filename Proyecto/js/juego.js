@@ -6,17 +6,18 @@ var contador_h=0;
 var band = false;
 var k=0;//indice que controla el vector que maneja los objetos que se presentaran en pantalla, es decir los animalitos
 //en la seccion de drop para asi poder extraer toda la informacion del objeto que se selecciona al arrastrar y soltar
+var sonido = document.createElement("audio");
 
 var misAnimalitos = [
-    {nombre:'Pingüino',imagen:'./imagenes/animalitos/pinguino.png',sonido:'../audios/pinguino.mp3',habitat:'./imagenes/habitats/Polo.jpg'},
-    {nombre:'Pez',imagen:'./imagenes/animalitos/pez.png',sonido:'../audios/pez.mp3',habitat:'./imagenes/habitats/Mar.jpg'},
-    {nombre:'Leon',imagen:'./imagenes/animalitos/leon.png',sonido:'../audios/leon.mp3',habitat:'./imagenes/habitats/Sabana.jpg'},
-    {nombre:'Ornitorrinco',imagen:'./imagenes/animalitos/ornitorringo.png',sonido:'../audios/ornitorrinco.mp3',habitat:'./imagenes/habitats/Rios.jpg'},
-    {nombre:'Conejo',imagen:'./imagenes/animalitos/conejito.png',sonido:'../audios/conejo.mp3',habitat:'./imagenes/habitats/Sabana.jpg'},
-    {nombre:'Suricato',imagen:'./imagenes/animalitos/suricata.png',sonido:'../audios/suricata.mpeg',habitat:'./imagenes/habitats/Sabana.jpg'},
-    {nombre:'Delfin',imagen:'./imagenes/animalitos/delfin.png',sonido:'../audios/delfin.mp3',habitat:'./imagenes/habitats/Mar.jpg'},
-    {nombre:'Oso polar',imagen:'./imagenes/animalitos/oso_polar.png',sonido:'../audios/oso_polar.mp3',habitat:'./imagenes/habitats/Polo.jpg'},
-    {nombre:'Tucan',imagen:'./imagenes/animalitos/tucan.png',sonido:'../audios/tucan.mp3',habitat:'./imagenes/habitats/Selva.jpg'}         
+    {nombre:'Pingüino',imagen:'./imagenes/animalitos/pinguino.png',sonido:'audios/pinguino.mp3',habitat:'./imagenes/habitats/Polo.jpg',nameHab:"Polo"},
+    {nombre:'Pez',imagen:'./imagenes/animalitos/pez.png',sonido:'audios/pez.mp3',habitat:'./imagenes/habitats/Mar.jpg',nameHab:"Mar"},
+    {nombre:'Leon',imagen:'./imagenes/animalitos/leon.png',sonido:'audios/leon.mp3',habitat:'./imagenes/habitats/Sabana.jpg',nameHab:"Sabana"},
+    {nombre:'Ornitorrinco',imagen:'./imagenes/animalitos/ornitorringo.png',sonido:'audios/ornitorrinco.mp3',habitat:'./imagenes/habitats/Rios.jpg',nameHab:"Rios"},
+    {nombre:'Conejo',imagen:'./imagenes/animalitos/conejito.png',sonido:'audios/conejo.mp3',habitat:'./imagenes/habitats/Sabana.jpg',nameHab:"Sabana"},
+    {nombre:'Suricato',imagen:'./imagenes/animalitos/suricata.png',sonido:'audios/suricata.mpeg',habitat:'./imagenes/habitats/Sabana.jpg',nameHab:"Sabana"},
+    {nombre:'Delfin',imagen:'./imagenes/animalitos/delfin.png',sonido:'audios/delfin.mp3',habitat:'./imagenes/habitats/Mar.jpg',nameHab:"Mar"},
+    {nombre:'Oso polar',imagen:'./imagenes/animalitos/oso_polar.png',sonido:'audios/oso_polar.mp3',habitat:'./imagenes/habitats/Polo.jpg',nameHab:"Polo"},
+    {nombre:'Tucan',imagen:'./imagenes/animalitos/tucan.png',sonido:'audios/tucan.mp3',habitat:'./imagenes/habitats/Selva.jpg',nameHab:"Selva"}         
 
 ];
 var vecJuego = [];
@@ -44,39 +45,46 @@ function acomodaElementos(j){
    
     
     image.src=vecJuego[num].habitat;
+
     
     hab1.style.backgroundImage='url('+image.src+')';
     hab1.style.backgroundRepeat='no-repeat';
     hab1.style.backgroundSize='100% 100%';
-    hab1.classList.add(''+array[0]);
-    num = array[1];
-    image.src=vecJuego[num].habitat;
+    hab1.setAttribute("name",vecJuego[num].nameHab);
     
+    num = array[1];
 
+    image.src=vecJuego[num].habitat;
     hab2.style.backgroundImage='url('+image.src+')';
     hab2.style.backgroundRepeat='no-repeat';
     hab2.style.backgroundSize='100% 100%';
-    hab2.classList.add(''+array[1]+'');
+    hab2.setAttribute("name",vecJuego[num].nameHab);
+    
     num = array[2];
+
     image.src=vecJuego[num].habitat;
     hab3.style.backgroundImage='url('+image.src+')';
     hab3.style.backgroundRepeat='no-repeat';
     hab3.style.backgroundSize='100% 100%';
-    hab3.classList.add(''+array[2]+'');
+    hab3.setAttribute("name",vecJuego[num].nameHab);
     
-    ani1.src = vecJuego[0].imagen;
+    ani1.src = vecJuego[j].imagen;
     ani1.classList.add(''+j+'');
-    ani1.nextSibling.innerHTML = vecJuego[0].nombre;
+    ani1.nextSibling.innerHTML = vecJuego[j].nombre;
+    ani1.setAttribute("name",vecJuego[j].nameHab);
+    ani1.setAttribute("ruido",vecJuego[j].sonido);
 
     ani2.src = vecJuego[1].imagen;
     ani2.classList.add(''+(j+1)+'');
-    ani2.nextSibling.innerHTML = vecJuego[1].nombre;
-
+    ani2.nextSibling.innerHTML = vecJuego[j+1].nombre;
+    ani2.setAttribute("name",vecJuego[j+1].nameHab);
+    ani2.setAttribute("ruido",vecJuego[j+1].sonido);
 
     ani3.src = vecJuego[2].imagen;
     ani3.classList.add(''+(j+2)+'');
-    ani3.nextSibling.innerHTML = vecJuego[2].nombre;
- 
+    ani3.nextSibling.innerHTML = vecJuego[j+2].nombre;
+    ani3.setAttribute("name",vecJuego[j+2].nameHab);
+    ani3.setAttribute("ruido",vecJuego[j+2].sonido);
    
 
     
@@ -139,22 +147,48 @@ function dragend(e){
 function drop(e){
     e.preventDefault();
     var data = e.dataTransfer.getData("text");
+    
+    
    
-    $(data).style.background = 'transparent';
-    e.target.appendChild(document.getElementById(data));
-    $(data).classList.add("animation");
-    e.target.classList.add("brilla");    
     pos=0;
     if($(data).id=='img'){
-
     }else if($(data).id=='img2'){
         pos=1;
     }else{
         pos=2;
     }
-    e.target.nextSibling.innerHTML = vecJuego[pos].nombre;
+
+    var animal=$(data).getAttribute("name");
+    var elemnt=e.target;
+    var habitad=elemnt.getAttribute("name");
+
+    
+    if(animal==habitad){
+        $(data).style.background = 'transparent';
+        e.target.appendChild(document.getElementById(data));
+        $(data).classList.add("animation");
+        e.target.classList.add("brilla");
+        $(data).setAttribute("draggable",'false')       
+        let cancion = sonidos($(data).getAttribute("ruido"));
+        let boton=document.createElement("button");
+        boton.click();
+        cancion.play();
+        e.target.nextSibling.innerHTML = vecJuego[pos].nombre;
+    }else{
+        let cancion = sonidos("audios/error.mp3");
+        let boton=document.createElement("button");
+        boton.click();
+        cancion.play();
+
+    }
+    
+
+
+   
+    
 
 }
+
 function generaRnd(){
     
     
@@ -211,6 +245,8 @@ function informacion(){
 
 }
 function inicia(){
+    
+    createAudio();
     generaRnd();
     activa();
     
@@ -261,7 +297,17 @@ function reinicia(){
     }
 }
 
+function createAudio(){
+    sonido.setAttribute("preload", "auto");
+    sonido.setAttribute("controls", "none");
+    sonido.style.display = "none"; // <-- ocultar el elemento en pantalla
+}
 
+function sonidos(direccion){
+    sonido.src = direccion;
+    document.body.appendChild(sonido);
+    return sonido;
+}
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {

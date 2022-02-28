@@ -1,0 +1,12 @@
+2.- capturarNombre
+	-Validar que, si no pone nombre, no avance a la sig pestaña
+3.- pantalla 
+	-validar nombre de animal en habitat 
+	-validar que el animal corresponda a su habitat
+	-Cambiar nombre de animalito (tiene que quedar abajo del habitat) 
+	-Validar que siga a la siguiente pestaña al colocar los animalitos correctamente 
+	-Validar que si el animal no corresponde al habitat, se reproduzca sonido de error 
+5.- Agregar los creditos (Eli) 
+6.- Agregar las instrucciones 
+7.- Video explicación del juego 
+8.- Documento explicando que hizo cada persona, agregar capturas github
