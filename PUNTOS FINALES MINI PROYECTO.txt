@@ -1,16 +1,11 @@
-1.- Index 
-	-Hacer referencia en los botones
 2.- capturarNombre
 	-Validar que, si no pone nombre, no avance a la sig pestaña
-	-Hacer referencia al botón de siguiente
 3.- pantalla 
 	-validar nombre de animal en habitat 
 	-validar que el animal corresponda a su habitat
-	-Sonido de animales
 	-Cambiar nombre de animalito (tiene que quedar abajo del habitat) 
 	-Validar que siga a la siguiente pestaña al colocar los animalitos correctamente 
 	-Validar que si el animal no corresponde al habitat, se reproduzca sonido de error 
-4.- Hacer referencia en los botones
 5.- Agregar los creditos (Eli) 
 6.- Agregar las instrucciones 
 7.- Video explicación del juego 
