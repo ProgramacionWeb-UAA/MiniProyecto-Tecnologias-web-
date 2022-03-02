@@ -97,7 +97,7 @@ function guarda(){
 
     });
     localStorage.setItem("user",obj);
-    window.open('./pantalla.html')
+    window.open('./pantalla.html',"_self")
 }
 
 function tecla(ev){
