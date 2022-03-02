@@ -5,7 +5,9 @@ var img=document.createElement("img");
 var objeto=localStorage.getItem("user");
 var nombre,avatar;
 const sonido = document.createElement("audio");
-document.body.addEventListener('click', sonarWin);
+
+
+//document.body.addEventListener('click', sonarWin);
 
 
 function presentar(){
@@ -15,6 +17,7 @@ function presentar(){
 
     img.src=avatar;
     div_avatar.appendChild(img);
+    sonarWin();
 }
 
 function musica(direccion){
@@ -39,14 +42,17 @@ function recuperar(){
 }
 
 function sonarWin(){
+    let boton=document.createElement("button");
     const cancion=musica('audios/win1.mp3');
+    boton.click();
     cancion.play();
-
-    setTimeout(sonarwin2,1500);
+    //setTimeout(sonarwin2,900);
 }
 
 function sonarwin2(){
+    let boton=document.createElement("button");
     const cancion2=musica('audios/win2.mp3');
+    boton.click();
     cancion2.play();
 }
 
