@@ -23,7 +23,7 @@ var misAnimalitos = [
 var vecJuego = [];
 // funcion que se encarga de acomodar las habitat y los Animalitos
 // es importante señalar que para identificar y validar los animalitos(img)
-// con sus habitat(div) se añaden clases con un numero que coincide entre 
+// con sus habitat(div) se añaden atributos con un nombre que coincide entre 
 // animalitos(img) y su habitat correspondiente
 function acomodaElementos(j){
     var image = new Image();
@@ -150,22 +150,14 @@ function dragover(e){
 }
 function dragstart(e){
 
-    // var img = document.createElement('img');
-    // img.src = './imagenes/animalitos/linux.gif';
-    // img.width = '50px';
-    // x = e.layerX;
-	// y = e.layerY;
-    
-    
-    // e.dataTransfer.setDragImage($(e.target.id),x,y);
+   
 
     e.dataTransfer.setData("text", e.target.id);
     e.target.style.opacity = '0'; 
     p=e.target.nextSibling;
     p.style.opacity='0';
    
-    // Define la imagen que se vera al ser arrastrado el elemento y por donde se coje el elemento que se va a mover (el raton aparece en la esquina sup_izq con 0,0)
-	
+    
 }
 function dragend(e){
     
@@ -208,12 +200,7 @@ function drop(e){
         cancion.play();
         e.target.nextSibling.innerHTML = vecJuego[pos].nombre;
         if(pantalla==3){
-            // $('img').classList.remove("animation");
-            // $('img2').classList.remove("animation");
-            // $('img3').classList.remove("animation");
-            // $('img').setAttribute("draggable",'true');  
-            // $('img2').setAttribute("draggable",'true');    
-            // $('img3').setAttribute("draggable",'true');  
+           
            
           
             setTimeout(()=>{
@@ -279,10 +266,11 @@ function generaRnd(){
     
     
     
-    var i=0;
+    var i=1;
+    vecJuego.push(misAnimalitos[Math.floor(Math.random() * 9)]);
     do{
         let obj = misAnimalitos[Math.floor(Math.random() * 9)];
-        if(!(vecJuego.includes(obj))){
+        if(!(vecJuego.includes(obj)) && vecJuego[i-1].habitat != obj.habitat){
             vecJuego.push(obj);
             i++;
             
@@ -404,7 +392,7 @@ function shuffle(array) {
   
       // intercambia elementos array[i] y array[j]
       // usamos la sintáxis "asignación de desestructuración" para lograr eso
-      // encontrarás más información acerca de esa sintaxis en los capítulos siguientes
+      
       // lo mismo puede ser escrito como:
       // let t = array[i]; array[i] = array[j]; array[j] = t
       [array[i], array[j]] = [array[j], array[i]];
