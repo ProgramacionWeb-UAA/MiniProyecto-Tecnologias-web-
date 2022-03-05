@@ -53,16 +53,4 @@ function sonarwin2(){
     cancion2.play();
 }
 
-function openPortada(){
-
-}
-
-function openJugar(){
-
-}
-
-function openCreditos(){
-
-}
-
 window.onload=recuperar;

@@ -48,16 +48,4 @@ function drawCanvas(){
     }
 }
 
-function openInstrucciones(){
-
-}
-
-function openJugar(){
-
-}
-
-function openCreitos(){
-
-}
-
 window.onload=drawCanvas;

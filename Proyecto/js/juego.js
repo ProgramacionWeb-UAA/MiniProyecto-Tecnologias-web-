@@ -226,7 +226,8 @@ function drop(e){
                 $('cont-2').removeChild($('ani-2'));
                 $('cont-3').removeChild($('ani-3'));
                 
-                k=3;
+                k=3;//empezara desde la posicion 3, es decir abarcara la otra mitad del vector para presentar a los 
+                //animalitos restantes en la segunda pantalla...
                 
                 
                 acomodaElementos(3);
@@ -347,7 +348,7 @@ function reinicia(){
     var seg=document.getElementById("seg");
     
     if(band){
-        $('titulo').innerHTML = 'GAME';
+        $('titulo').innerHTML = 'JUGANDO';
         
         $('img').setAttribute('draggable','true');
         $('img2').setAttribute('draggable','true');
