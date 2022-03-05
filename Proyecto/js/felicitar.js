@@ -7,7 +7,7 @@ var nombre,avatar;
 const sonido = document.createElement("audio");
 
 
-//document.body.addEventListener('click', sonarWin);
+// document.body.addEventListener('click', sonarWin);
 
 
 function presentar(){
