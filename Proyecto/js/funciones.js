@@ -100,7 +100,7 @@ function guarda(){
     var ventana = window.self;
     ventana.opener = window.self;
     ventana.close();
-    window.open('./pantalla.html')
+    window.open('./pantalla.html','self');
 }
 
 function tecla(ev){
