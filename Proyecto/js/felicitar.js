@@ -46,7 +46,7 @@ function sonarWin(){
     const cancion=musica('audios/win1.mp3');
     boton.click();
     cancion.play();
-    //setTimeout(sonarwin2,900);
+    setTimeout(sonarwin2,900);
 }
 
 function sonarwin2(){
