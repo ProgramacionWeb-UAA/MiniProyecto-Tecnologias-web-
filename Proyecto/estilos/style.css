@@ -22,7 +22,7 @@
 }
 
 #bodypres{
-    background: linear-gradient(to left, rgb(41, 114, 252),rgb(88, 241, 241),rgb(145, 236, 243),rgb(68, 68, 68),rgb(90, 89, 89),rgb(121, 120, 120),rgb(150, 149, 149));
+    background: linear-gradient(to left, rgb(41, 192, 252),rgb(41, 192, 252),rgb(41, 192, 252),rgb(41, 192, 252),rgb(56, 193, 247),rgb(92, 207, 252),rgb(154, 226, 255));
     background-size: 100vw 100vh;
     background-attachment: fixed;
 }

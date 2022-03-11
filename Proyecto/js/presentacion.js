@@ -48,16 +48,15 @@ function drawCanvas(){
     }
 }
 
-function openInstrucciones(){
 
+
+function openGame(){
+    var ventana = window.self;
+    ventana.opener = window.self;
+    ventana.close();
+    window.open('./capturarNombre.html');
 }
 
-function openJugar(){
 
-}
-
-function openCreitos(){
-
-}
 
 window.onload=drawCanvas;

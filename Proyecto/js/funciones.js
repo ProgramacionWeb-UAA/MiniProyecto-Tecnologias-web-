@@ -97,9 +97,7 @@ function guarda(){
 
     });
     localStorage.setItem("user",obj);
-    var ventana = window.self;
-    ventana.opener = window.self;
-    ventana.close();
+    window.close();
     window.open('./pantalla.html','self');
 }
 
